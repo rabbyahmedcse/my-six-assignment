@@ -3,7 +3,7 @@ import React from 'react';
 
 const PersonsCard = ({person}) => {
     return (
-        <div className="w-full overflow-hidden rounded-[20px] border border-[#292c32] bg-[#15171c]">
+        <div className="w-full overflow-hidden rounded-[20px] border border-[#292c32] bg-[#15171c] transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
             <div className="relative h-[250px] w-full">
                 <Image
                     src={person.image}

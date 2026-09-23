@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PersonsCard from '../component/PersonsCard';
+import Link from 'next/link';
 
 const getPersons = async () => {
     try {
@@ -40,7 +41,13 @@ const WorkoutPage = async () => {
             </div>
             <div className='grid grid-cols-3 gap-3 container mx-auto'>
                 {
-                    allPersons.map((person)=> <PersonsCard key={person.id} person={person}></PersonsCard> )
+                    allPersons.map((person)=> (
+                        <Link
+                        key={person.id}
+                        href={`/Workout/${person.id}`}>
+                    <PersonsCard  person={person}></PersonsCard> 
+                    </Link>
+                    ))
                 }
             </div>
         </div>
