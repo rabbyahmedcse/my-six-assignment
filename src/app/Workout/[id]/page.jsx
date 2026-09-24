@@ -1,6 +1,8 @@
+
 import TodayPlanButton from '../../component/TodayPlanButton/TodayPlan';
 import Image from 'next/image';
 import React from 'react';
+import SaveButton from '../../component/saveButton/SaveButton';
 
 
 const PersonDetailsPage = async({params}) => {
@@ -103,12 +105,10 @@ const PersonDetailsPage = async({params}) => {
                 </ol>
 
                 
-                <div className="mt-6 flex gap-3">
+                <div className="mt-6 flex gap-10">
                    <TodayPlanButton person={persons}></TodayPlanButton>
 
-                    <button className="rounded-md border border-gray-600 px-5 py-2 text-sm hover:bg-gray-800">
-                        ♧ Save for later
-                    </button>
+                   <SaveButton person={persons}></SaveButton>
                 </div>
             </div>
 

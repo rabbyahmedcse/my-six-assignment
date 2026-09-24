@@ -24,11 +24,25 @@ const MyplanCard = ({ plan }) => {
                         {plan.equipment}
                     </p>
 
-                    <div className="mt-2 flex items-center gap-4 text-xs text-gray-300">
-                        <span>◯ {plan.duration} min</span>
-                        <span>🔥 {plan.caloriesBurned} kcal</span>
-                        <span>☆ {plan.rating}</span>
-                    </div>
+                   
+                    <div className="mt-1 flex items-center gap-3 text-xs text-gray-300">
+
+<span className="flex items-center gap-1">
+    <span className="text-lime-400">◯</span>
+    {plan.duration} min
+</span>
+
+<span className="flex items-center gap-1">
+    <span className="text-lime-400">♨</span>
+    {plan.caloriesBurned} kcal
+</span>
+
+<span className="flex items-center gap-1">
+    <span className="text-lime-400">☆</span>
+    {plan.rating}
+</span>
+
+</div>
                 </div>
 
                 <div className="flex items-center gap-3">
