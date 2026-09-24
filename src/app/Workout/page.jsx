@@ -2,6 +2,7 @@
 import React from 'react';
 import PersonsCard from '../component/PersonsCard';
 import Link from 'next/link';
+import Hero from '../component/Hero';
 
 const getPersons = async () => {
     try {
@@ -23,7 +24,9 @@ const getPersons = async () => {
 const WorkoutPage = async () => {
     const allPersons = await getPersons();
     return (
+        
         <div className='mt-10'>
+            <Hero></Hero>
             <div className="bg-[#0b0b0d] px-5 py-3 sm:px-6">
 
                 <div className="container mx-auto">

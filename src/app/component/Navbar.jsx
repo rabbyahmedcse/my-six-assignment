@@ -1,26 +1,45 @@
+'use client'
 import Link from "next/link";
 import React from "react";
+import SaveButton from "./saveButton/SaveButton";
+import SaveCount from "./CountPlan/SaveCount";
+import TodayCount from "./CountPlan/TodayCount";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-
+ const pathname = usePathname();
     const links = <>
-        <Link
-            href={"/Workout"}
-            className="px-4 py-1.5 text-[10px] text-gray-400 hover:text-white"
-        >
-            Workout
-        </Link>
+      
+<Link
+    href="/Workout"
+    className={`rounded-full px-5 py-2 text-[10px] font-semibold transition-all duration-300 ${
+        pathname === "/Workout" || pathname === "/"
+            ? "bg-[#1a2510] text-[#ccff00] hover:bg-[#202d13]"
+            : "text-gray-400 hover:bg-[#151a10] hover:text-white"
+    }`}
+>
+    Workout
+</Link>
 
-        <Link
-            href={"/MyPlan"}
-            className="px-4 py-1.5 text-[10px] text-gray-400 hover:text-white"
-        >
-            My Plan
-        </Link>
+<Link
+    href="/MyPlan"
+    className={`rounded-full px-5 py-2 text-[10px] font-semibold transition-all duration-300 ${
+        pathname === "/MyPlan" 
+            ? "bg-[#1a2510] text-[#ccff00] hover:bg-[#202d13]"
+            : "text-gray-400 hover:bg-[#151a10] hover:text-white"
+    }`}
+>
+My Plan
+</Link>
+
+
+        
+
+        
     </>;
 
     return (
-        <section className="bg-[#0b0b0d] border-b border-[#1c1c20]">
+        <section className="sticky top-0 z-50 border-b border-[#1c1c20] bg-[#0b0b0d]/95 backdrop-blur-md">
 
         <div className="navbar container mx-auto min-h-[64px] px-4 sm:px-6">
     
@@ -87,26 +106,14 @@ const Navbar = () => {
             <div className="navbar-end gap-3 sm:gap-5">
     
                 {/* Plan */}
-                <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] font-medium text-gray-300">
-                        Plan
-                    </span>
-    
-                    <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#d8ff00] text-[8px] font-bold text-black">
-                        0
-                    </span>
+                <div >
+                  <TodayCount></TodayCount>
                 </div>
     
     
                 {/* Saved */}
-                <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-gray-400">
-                        Saved
-                    </span>
-    
-                    <span className="flex h-4 w-4 items-center justify-center rounded-full border border-[#29292d] text-[8px] text-gray-400">
-                        ○
-                    </span>
+                <div >
+                   <SaveCount></SaveCount>
                 </div>
     
             </div>

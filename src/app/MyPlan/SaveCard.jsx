@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SaveRemoveButton from "../RemoveButton/SaveRemoveButton";
 
 const SaveCard = ({ plan }) => {
    
@@ -55,6 +56,7 @@ const SaveCard = ({ plan }) => {
                     >
                         View Details
                     </Link>
+                    <SaveRemoveButton plan={plan}></SaveRemoveButton>
 
             </div>
 

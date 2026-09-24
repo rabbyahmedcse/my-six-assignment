@@ -2,8 +2,22 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import TodayPlanRemoveButton from '../RemoveButton/TodayPlanRemoveButton';
 
 const MyplanCard = ({ plan }) => {
+    const [isDone, setIsdone] = useState('no');
+    const handleReadButton = () => {
+        if (isDone === 'no') {
+            setIsdone('yes')
+            toast.success(`marks the ${plan.name} is done`);
+            return;
+        }
+        toast.warning(` ${plan.name} is already marks `);
+
+    }
+
     return (
         <div className="w-full rounded-2xl border border-[#292c32] bg-[#15171c] p-3 transition-all duration-300 hover:scale-[1.01] hover:border-lime-400/40">
 
@@ -24,25 +38,25 @@ const MyplanCard = ({ plan }) => {
                         {plan.equipment}
                     </p>
 
-                   
+
                     <div className="mt-1 flex items-center gap-3 text-xs text-gray-300">
 
-<span className="flex items-center gap-1">
-    <span className="text-lime-400">◯</span>
-    {plan.duration} min
-</span>
+                        <span className="flex items-center gap-1">
+                            <span className="text-lime-400">◯</span>
+                            {plan.duration} min
+                        </span>
 
-<span className="flex items-center gap-1">
-    <span className="text-lime-400">♨</span>
-    {plan.caloriesBurned} kcal
-</span>
+                        <span className="flex items-center gap-1">
+                            <span className="text-lime-400">♨</span>
+                            {plan.caloriesBurned} kcal
+                        </span>
 
-<span className="flex items-center gap-1">
-    <span className="text-lime-400">☆</span>
-    {plan.rating}
-</span>
+                        <span className="flex items-center gap-1">
+                            <span className="text-lime-400">☆</span>
+                            {plan.rating}
+                        </span>
 
-</div>
+                    </div>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -53,9 +67,20 @@ const MyplanCard = ({ plan }) => {
                         View Details
                     </Link>
 
-                    <button className="rounded-full bg-lime-400 px-5 py-2 text-xs font-semibold text-black hover:bg-lime-300">
-                        Mark as Done
-                    </button>
+                    <div>
+                        <button
+                            onClick={() => handleReadButton()}
+                            className={`rounded-full px-5 py-2 text-xs font-semibold transition-all duration-300 ${isDone === 'no'
+                                    ? 'bg-lime-400 text-black shadow-sm hover:scale-105 hover:bg-lime-300 hover:shadow-lg'
+                                    : 'border border-lime-400 bg-transparent text-lime-400 hover:bg-lime-400 hover:text-black'
+                                }`}
+                        >
+                            {isDone === 'no' ? '✓ Mark as Done' : '✓ Completed'}
+                        </button>
+                    </div>
+                    <div>
+                        <TodayPlanRemoveButton plan={plan}></TodayPlanRemoveButton>
+                    </div>
                 </div>
 
             </div>
