@@ -104,7 +104,7 @@ const PersonDetailsPage = async({params}) => {
 
                 
                 <div className="mt-6 flex gap-3">
-                   <TodayPlanButton></TodayPlanButton>
+                   <TodayPlanButton person={persons}></TodayPlanButton>
 
                     <button className="rounded-md border border-gray-600 px-5 py-2 text-sm hover:bg-gray-800">
                         ♧ Save for later
