@@ -25,3 +25,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.Toastify__toast {
+  background: #15171c !important;
+  color: white !important;
+  border: 1px solid #292c32;
+  border-radius: 12px !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.Toastify__toast--success {
+  border-left: 4px solid #ccff00;
+}
+
+.Toastify__toast--warning {
+  border-left: 4px solid #facc15;
+}
+
+.Toastify__progress-bar {
+  background: #ccff00 !important;
+}
+
+.Toastify__close-button {
+  color: #9ca3af !important;
+}

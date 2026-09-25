@@ -32,7 +32,15 @@ export default function RootLayout({ children }) {
       {children}
       <Footer></Footer>
       </PersonsContextProvider>
-      <ToastContainer />
+      <ToastContainer
+  position="top-right"
+  autoClose={2500}
+  hideProgressBar={false}
+  newestOnTop
+  closeOnClick={true}
+  pauseOnHover
+  theme="dark"
+/>
         </body>
     </html>
   );
