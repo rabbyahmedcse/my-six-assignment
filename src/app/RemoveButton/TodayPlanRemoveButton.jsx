@@ -6,7 +6,7 @@ const TodayPlanRemoveButton = ({plan}) => {
     const {todayPlan, setTodayPlan} = useContext(PersonsContext);
     const handleRemove =(id)=>{
         const afterRemove = todayPlan.filter((today)=> today.id !== id);
-         toast.info(`${plan.name} is remove from Save`);
+         toast.info(`${plan.name} is remove from Today's Plan`);
         setTodayPlan(afterRemove);
     }
     return (

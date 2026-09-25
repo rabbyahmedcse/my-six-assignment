@@ -3,11 +3,15 @@ import TodayPlanButton from '../../component/TodayPlanButton/TodayPlan';
 import Image from 'next/image';
 import React from 'react';
 import SaveButton from '../../component/saveButton/SaveButton';
+import { notFound } from 'next/navigation';
 
 
 const PersonDetailsPage = async({params}) => {
     const {id} = await params;
  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+ if (!res.ok) {
+    notFound();
+}
  const persons = await res.json();
  return (
     <div className="min-h-screen bg-[#0d0f12] p-6 text-white pt-10">

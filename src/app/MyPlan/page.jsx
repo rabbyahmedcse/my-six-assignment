@@ -71,7 +71,6 @@ const ShowMyPlanData = () => {
                 </div>
 
 
-                {/* Sort */}
                 <div className="flex items-center gap-2">
 
                     <span className="text-xs text-gray-400">
@@ -93,7 +92,6 @@ const ShowMyPlanData = () => {
             </div>
 
 
-            {/* Content */}
             <div className="space-y-3">
 
                 {activeTab === 'today' ? (

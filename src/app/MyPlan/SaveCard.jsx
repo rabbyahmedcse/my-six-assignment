@@ -5,18 +5,17 @@ import SaveRemoveButton from "../RemoveButton/SaveRemoveButton";
 const SaveCard = ({ plan }) => {
    
  return (
-        <div className="w-full rounded-2xl border border-[#292c32] bg-[#15171c] p-3 transition-all duration-300 hover:border-lime-400/40 hover:bg-[#181b20]">
+        <div className="w-full rounded-2xl border border-[#292c32] bg-[#15171c] p-3 transition-all duration-300 hover:scale-[1.01] hover:border-lime-400/40 hover:bg-[#181b20]">
 
             <div className="flex items-center gap-4">
 
-                {/* Image */}
                 <Image width={400} height={400}
                     src={plan.image}
                     alt={plan.name}
                     className="h-16 w-28 rounded-lg object-cover"
                 />
 
-                {/* Exercise Info */}
+               
                 <div className="min-w-0 flex-1">
 
                     <h2 className="text-sm font-bold uppercase text-white">
@@ -27,7 +26,7 @@ const SaveCard = ({ plan }) => {
                         {plan.equipment}
                     </p>
 
-                    {/* Details */}
+                    
                     <div className="mt-1 flex items-center gap-3 text-xs text-gray-300">
 
                         <span className="flex items-center gap-1">
@@ -49,7 +48,7 @@ const SaveCard = ({ plan }) => {
 
                 </div>
 
-                {/* View Details Button */}
+               
                 <Link
                         href={`/Workout/${plan.id}`}
                         className="rounded-full border border-gray-600 px-5 py-2 text-xs text-white hover:border-lime-400"
