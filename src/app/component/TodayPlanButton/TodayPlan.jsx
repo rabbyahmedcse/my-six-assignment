@@ -26,12 +26,23 @@ const TodayPlanButton = ({ person }) => {
     
     return (
 
-        <button onClick={() => handleTodayPlan()} className={`rounded-md px-5 py-2 text-sm font-semibold transition-all duration-300 ${alreadyTodayPlan
-                ? "bg-green-600 text-white hover:bg-green-600"
-                : "bg-lime-400 text-black hover:bg-lime-300"
-            }`}>
-            {alreadyTodayPlan ? "✓ Added to today's plan" : "+ Add to today's plan"}
-        </button>
+
+        <button
+  onClick={handleTodayPlan}
+  className={`rounded-md px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+    alreadyTodayPlan
+      ? "bg-green-500 text-white"
+      : todayPlan.length >= 5
+      ? "cursor-not-allowed bg-gray-700 text-gray-500"
+      : "bg-lime-400 text-black hover:bg-lime-300"
+  }`}
+>
+  {alreadyTodayPlan
+    ? "✓ Added to today's plan"
+    : todayPlan.length >= 5
+    ? "Today's Plan Full"
+    : "+ Add to today's plan"}
+</button>
 
     );
 };
