@@ -8,38 +8,43 @@ import TodayPlanRemoveButton from '../RemoveButton/TodayPlanRemoveButton';
 
 const MyplanCard = ({ plan }) => {
     const [isDone, setIsdone] = useState('no');
+
     const handleReadButton = () => {
         if (isDone === 'no') {
-            setIsdone('yes')
+            setIsdone('yes');
             toast.success(`marks the ${plan.name} is done`);
             return;
         }
-        toast.warning(` ${plan.name} is already marks `);
 
-    }
+        toast.warning(` ${plan.name} is already marks `);
+    };
 
     return (
         <div className="w-full rounded-2xl border border-[#292c32] bg-[#15171c] p-3 transition-all duration-300 hover:scale-[1.01] hover:border-lime-400/40">
 
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 
-                <Image width={400} height={400}
+    
+                <Image
+                    width={400}
+                    height={400}
                     src={plan.image}
                     alt={plan.name}
-                    className="h-16 w-28 rounded-lg object-cover"
+                    className="h-40 w-full rounded-lg object-cover sm:h-16 sm:w-28"
                 />
 
+                
                 <div className="min-w-0 flex-1">
-                    <h2 className="text-sm font-bold uppercase text-white">
+
+                    <h2 className="text-sm font-bold uppercase text-white sm:text-base">
                         {plan.name}
                     </h2>
 
-                    <p className="text-xs text-gray-400">
+                    <p className="mt-1 text-xs text-gray-400">
                         {plan.equipment}
                     </p>
 
-
-                    <div className="mt-1 flex items-center gap-3 text-xs text-gray-300">
+                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-gray-300 sm:text-xs">
 
                         <span className="flex items-center gap-1">
                             <span className="text-lime-400">◯</span>
@@ -59,28 +64,33 @@ const MyplanCard = ({ plan }) => {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+             
+                <div className="flex w-full items-center gap-2 sm:w-auto sm:gap-3">
+
                     <Link
                         href={`/Workout/${plan.id}`}
-                        className="rounded-full border border-gray-600 px-5 py-2 text-xs text-white hover:border-lime-400"
+                        className="flex-1 rounded-full border border-gray-600 px-3 py-2 text-center text-[10px] text-white transition-all duration-300 hover:border-lime-400 hover:text-lime-400 sm:flex-none sm:px-5 sm:text-xs"
                     >
                         View Details
                     </Link>
 
-                    <div>
-                        <button
-                            onClick={() => handleReadButton()}
-                            className={`rounded-full px-5 py-2 text-xs font-semibold transition-all duration-300 ${isDone === 'no'
-                                    ? 'bg-lime-400 text-black shadow-sm hover:scale-105 hover:bg-lime-300 hover:shadow-lg'
-                                    : 'border border-lime-400 bg-transparent text-lime-400 hover:bg-lime-400 hover:text-black'
-                                }`}
-                        >
-                            {isDone === 'no' ? '✓ Mark as Done' : '✓ Completed'}
-                        </button>
+                    <button
+                        onClick={() => handleReadButton()}
+                        className={`flex-1 rounded-full px-3 py-2 text-[10px] font-semibold transition-all duration-300 sm:flex-none sm:px-5 sm:text-xs ${
+                            isDone === 'no'
+                                ? 'bg-lime-400 text-black shadow-sm hover:scale-105 hover:bg-lime-300 hover:shadow-lg'
+                                : 'border border-lime-400 bg-transparent text-lime-400 hover:bg-lime-400 hover:text-black'
+                        }`}
+                    >
+                        {isDone === 'no'
+                            ? '✓ Mark as Done'
+                            : '✓ Completed'}
+                    </button>
+
+                    <div className="shrink-0">
+                        <TodayPlanRemoveButton plan={plan} />
                     </div>
-                    <div>
-                        <TodayPlanRemoveButton plan={plan}></TodayPlanRemoveButton>
-                    </div>
+
                 </div>
 
             </div>

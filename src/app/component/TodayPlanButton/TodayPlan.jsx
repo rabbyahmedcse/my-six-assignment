@@ -7,6 +7,7 @@ const TodayPlanButton = ({ person }) => {
     const { todayPlan, setTodayPlan } = useContext(PersonsContext);
     const alreadyTodayPlan = todayPlan.find((plan) => plan.id === person.id);
     const handleTodayPlan = () => {
+        if(todayPlan.length < 5){
         if (alreadyTodayPlan) {
             toast.warning(`${person.name} is Already Add Today Plan`)
             return;
@@ -14,7 +15,15 @@ const TodayPlanButton = ({ person }) => {
         setTodayPlan([...todayPlan, person]);
         toast.success(`${person.name} is add to todays plan`);
     }
-    console.log(person, "persons");
+   else if (alreadyTodayPlan) {
+        toast.warning(`${person.name} is Already Add Today Plan`)
+        return;
+    }
+    else{
+        toast.warning(`You  Already Add 5 Today Plan `);
+    }
+    }
+    
     return (
 
         <button onClick={() => handleTodayPlan()} className={`rounded-md px-5 py-2 text-sm font-semibold transition-all duration-300 ${alreadyTodayPlan

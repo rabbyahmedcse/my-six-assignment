@@ -18,51 +18,51 @@ const MyPlanSummary = () => {
 
     return (
         <div className="mb-6">
-            
-            {/* Heading */}
-            <h1 className="text-2xl font-bold uppercase text-white">
+
+           
+            <h1 className="text-xl font-bold uppercase text-white sm:text-2xl">
                 MY PLAN
             </h1>
 
-            <p className="mt-1 text-sm text-gray-400">
+            <p className="mt-1 text-xs text-gray-400 sm:text-sm">
                 Cap of five lifts for today. Finish them, then load more.
             </p>
 
 
-            {/* Summary Card */}
-            <div className="mt-5 grid grid-cols-3 overflow-hidden rounded-2xl border border-[#292c32] bg-[#15171c]">
+            
+            <div className="mt-5 grid grid-cols-1 overflow-hidden rounded-2xl border border-[#292c32] bg-[#15171c] sm:grid-cols-3">
 
-                {/* Exercises */}
-                <div className="p-5">
+               
+                <div className="p-4 sm:p-5">
                     <p className="text-xs text-gray-400">
                         Exercises
                     </p>
 
-                    <h2 className="mt-1 text-3xl font-bold text-lime-400">
+                    <h2 className="mt-1 text-2xl font-bold text-lime-400 sm:text-3xl">
                         {todayPlan.length}
                     </h2>
                 </div>
 
 
-                {/* Minutes */}
-                <div className="border-l border-[#292c32] p-5">
+               
+                <div className="border-t border-[#292c32] p-4 sm:border-l sm:border-t-0 sm:p-5">
                     <p className="text-xs text-gray-400">
                         Minutes
                     </p>
 
-                    <h2 className="mt-1 text-3xl font-bold text-white">
+                    <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
                         {totalMinutes}
                     </h2>
                 </div>
 
 
-                {/* Calories */}
-                <div className="border-l border-[#292c32] p-5">
+                
+                <div className="border-t border-[#292c32] p-4 sm:border-l sm:border-t-0 sm:p-5">
                     <p className="text-xs text-gray-400">
                         Calories
                     </p>
 
-                    <h2 className="mt-1 text-3xl font-bold text-white">
+                    <h2 className="mt-1 text-2xl font-bold text-white sm:text-3xl">
                         {totalCalories}
                     </h2>
                 </div>

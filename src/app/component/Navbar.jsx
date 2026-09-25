@@ -43,10 +43,10 @@ My Plan
 
         <div className="navbar container mx-auto min-h-[64px] px-4 sm:px-6">
     
-            {/* Left Side */}
+           
             <div className="navbar-start">
     
-                {/* Mobile Menu */}
+               
                 <div className="dropdown mr-2 md:hidden">
     
                     <div
@@ -70,7 +70,6 @@ My Plan
                         </svg>
                     </div>
     
-                    {/* Mobile Dropdown */}
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content z-[50] mt-3 w-48 rounded-box border border-[#1c1c20] bg-[#0b0b0d] p-3 shadow-lg"
@@ -81,7 +80,7 @@ My Plan
                 </div>
     
     
-                {/* Logo */}
+               
                 <Link
                     href="/"
                     className="text-sm font-extrabold tracking-tight text-white sm:text-base"
@@ -92,7 +91,7 @@ My Plan
             </div>
     
     
-            {/* Desktop Menu */}
+          
             <div className="navbar-center hidden md:flex">
     
                 <ul className="menu menu-horizontal px-1">
@@ -102,16 +101,16 @@ My Plan
             </div>
     
     
-            {/* Right Side */}
+           
             <div className="navbar-end gap-3 sm:gap-5">
     
-                {/* Plan */}
+                
                 <div >
                   <TodayCount></TodayCount>
                 </div>
     
     
-                {/* Saved */}
+                
                 <div >
                    <SaveCount></SaveCount>
                 </div>
