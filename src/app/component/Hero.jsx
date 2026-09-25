@@ -8,7 +8,6 @@ const Hero = () => {
 
             <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center overflow-hidden rounded-xl border border-[#24262c] bg-[#15171c] px-5 py-6 sm:px-8 sm:py-8 md:grid-cols-3 md:px-10 lg:min-h-[235px] lg:px-12">
 
-                
                 <div className="max-w-[600px] md:col-span-2">
 
                     <p className="mb-3 text-[8px] font-bold uppercase tracking-wide text-[#d8ff00] sm:text-[9px]">
@@ -35,8 +34,8 @@ const Hero = () => {
 
                 </div>
 
-
-                <div className="relative mt-6 hidden h-[160px] w-full shrink-0 sm:block md:mt-0 md:h-[200px] lg:h-[210px]">
+               
+                <div className="relative mt-5 h-[130px] w-full sm:mt-6 sm:h-[160px] md:mt-0 md:h-[200px] lg:h-[210px]">
 
                     <Image
                         src={heroimg}
